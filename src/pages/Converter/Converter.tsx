@@ -33,12 +33,12 @@ const Converter: React.FC = () => {
 
     const handleConvert = useCallback(() => {
         if (currentCurrency && baseCurrency) {
-            // dispatch(convertCurrency({ to: baseCurrency.value, from: currentCurrency.value, amount: valueToConvert }))
+            dispatch(convertCurrency({ to: baseCurrency.value, from: currentCurrency.value, amount: valueToConvert }))
         }
     }, [baseCurrency, currentCurrency, valueToConvert, dispatch])
 
     useEffect(() => {
-        // dispatch(fetchCurrencySymbols())
+        dispatch(fetchCurrencySymbols())
     }, [dispatch])
     return (
         <>
