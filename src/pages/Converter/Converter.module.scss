@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 1rem auto;
+  input {
+    margin: 1rem 0;
+    width: 100%;
+    padding: 1rem;
+  }
+  .icon {
+    display: block;
+    background-color: transparent;
+    background: url("../../../public/transfer.png");
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    background-size: contain;
+    transform: rotate(90deg);
+    transition: all ease 0.3s;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    &:hover {
+      transform: rotate(90deg) scale(1.1);
+    }
+  }
+  .active {
+    animation: pulse-animation 2s infinite;
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: rotate(90deg) scale(1);
+  }
+  50% {
+    transform: rotate(90deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(90deg) scale(1);
+  }
+}

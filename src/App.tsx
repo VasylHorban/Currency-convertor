@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Header from './components/Header/Header';
+import Converter from './pages/Converter/Converter';
+import Currencies from './pages/Currencies/Currencies';
+import Layout from './components/Layout/Layout';
+import BaseCurrency from './components/BaseCurrency/BaseCurrency';
+import { path } from './const';
+
+const App: React.FC = () => (
+    <div className='app'>
+        <BrowserRouter>
+            <Header />
+            <Layout leftContent={<Routes>
+                <Route path={path.CONVERTER} element={<Converter />} />
+                <Route path={path.CURRENCIES} element={<Currencies />} />
+            </Routes>} rightContent={<BaseCurrency />} />
+        </BrowserRouter>
+    </div>);
+
 
 export default App;

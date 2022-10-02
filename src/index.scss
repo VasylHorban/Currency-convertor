@@ -1,0 +1,72 @@
+@import "reset";
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+$base-default: #6362e7;
+
+$input-color: rgb(112, 112, 112);
+$input-padding: .5rem 1rem; 
+$input-border-radius: .5rem;
+$input-border: 1px solid  rgb(225, 225, 233);
+
+input {
+  color: $input-color;
+  padding: $input-padding;
+  border-radius: $input-border-radius;
+  border: $input-border;
+  &:focus {
+    outline: 2px solid $base-default;
+  }
+}
+
+.app {
+  background-color: #f4f6fd;
+  min-height: 100vh;
+}
+
+.custom-select {
+  &__control {
+      border-radius: .5rem;
+      border: $input-border !important;
+      padding: $input-padding;
+  }
+  &__input-container {
+      color: $input-color !important;
+      input {
+          color: $input-color !important;
+      }
+  }
+  &__indicator {
+      color: $base-default !important;
+      cursor: pointer;
+  }
+  &__single-value {
+    color: $input-color !important
+  }
+  &__control--is-focused {
+    border-color: $base-default !important;
+  }
+  &__option {
+    cursor: pointer !important;
+    color: $input-color !important;
+    &:hover {
+      background-color: lighten($base-default, 10%);
+      color: #fff !important;
+    }
+  }
+  &__option--is-selected {
+    color: #fff !important;
+    background-color: $base-default !important;
+  }
+}
